@@ -1,0 +1,40 @@
+{
+  "name": "create-passionfruit",
+  "version": "0.1.0",
+  "description": "Scaffold a passionfruit website — bilingual marketing sites with Claude Code.",
+  "type": "module",
+  "bin": {
+    "create-passionfruit": "./bin/index.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "astro",
+    "template",
+    "website",
+    "claude-code",
+    "bilingual",
+    "passionfruit"
+  ],
+  "homepage": "https://github.com/passion4it-gmbh/passionfruit",
+  "bugs": "https://github.com/passion4it-gmbh/create-passionfruit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/passion4it-gmbh/create-passionfruit.git"
+  },
+  "author": {
+    "name": "PASSION4IT GmbH",
+    "email": "info@passion4it.de",
+    "url": "https://passion4it.de"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "kleur": "^4.1.5",
+    "prompts": "^2.4.2",
+    "tar": "^7.4.3"
+  }
+}
