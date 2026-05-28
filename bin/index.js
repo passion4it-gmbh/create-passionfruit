@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, createWriteStream, rmSync } from "node:fs";
-import { resolve, basename } from "node:path";
+import { existsSync, mkdirSync, rmSync, readFileSync, writeFileSync } from "node:fs";
+import { resolve, basename, join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { pipeline } from "node:stream/promises";
 import { Readable } from "node:stream";
@@ -54,6 +54,8 @@ async function main() {
   console.log(kleur.dim("  ↓ downloading latest passionfruit release..."));
   await downloadTemplate(dir);
 
+  resetProjectMetadata(dir, basename(dir));
+
   console.log(kleur.dim("  ⚙ initializing git..."));
   run("git", ["init", "-q", "-b", "main"], dir);
   run("git", ["add", "-A"], dir);
@@ -78,6 +80,22 @@ async function main() {
   console.log("");
   console.log(kleur.dim("  Don't have Claude Code? https://claude.com/claude-code"));
   console.log("");
+}
+
+function resetProjectMetadata(dir, projectName) {
+  const pkgPath = join(dir, "package.json");
+  const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
+
+  pkg.name = projectName;
+  pkg.version = "0.1.0";
+  pkg.private = true;
+  delete pkg.description;
+  delete pkg.homepage;
+  delete pkg.bugs;
+  delete pkg.repository;
+  delete pkg.author;
+
+  writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
 }
 
 async function downloadTemplate(dir) {
