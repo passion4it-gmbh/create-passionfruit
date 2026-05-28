@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/passion4it-gmbh/create-passionfruit/compare/create-passionfruit-v0.2.1...create-passionfruit-v0.2.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* **scaffold:** reset package.json metadata for derived projects ([#7](https://github.com/passion4it-gmbh/create-passionfruit/issues/7)) ([e5cea28](https://github.com/passion4it-gmbh/create-passionfruit/commit/e5cea2831b3819149028808edd3fd0cbe2806806))
+
 ## [0.2.1](https://github.com/passion4it-gmbh/create-passionfruit/compare/create-passionfruit-v0.2.0...create-passionfruit-v0.2.1) (2026-05-28)
 
 
