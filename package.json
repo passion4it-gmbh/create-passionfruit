@@ -24,7 +24,7 @@
   "bugs": "https://github.com/passion4it-gmbh/create-passionfruit/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/passion4it-gmbh/create-passionfruit.git"
+    "url": "https://github.com/passion4it-gmbh/create-passionfruit"
   },
   "author": {
     "name": "PASSION4IT GmbH",
